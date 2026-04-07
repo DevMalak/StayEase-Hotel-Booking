@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StayEase | Hotel Booking</title>
+    <!-- Browser Tab Icon -->
+    <link rel="icon" type="image/png" href="./Assets/Hotel icon.jpg">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="./CSS/bootstrap.min.css">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="./CSS/all.min.css">
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="./CSS/style.css">
+    <link rel="stylesheet" href="./CSS/dark_mode.css">
+</head>
+<body>
+
+    <!-- ========================================== START NAVBAR (TASK 1) ========================================== -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top shadow-sm">
+        <div class="container d-flex align-items-center"> 
+            
+            <!-- Brand Logo & Name -->
+            <a class="navbar-brand fw-bold d-flex align-items-center" href="#home">
+                <img src="./Assets/hotel logo.jpg" alt="StayEase Logo" width="45" height="45" class="me-2 logo-img" style="border-radius: 50%;">
+                <span>StayEase</span>
+            </a>
+
+            <!-- Mobile Menu Toggle -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Navigation Links -->
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#rooms">Rooms</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- Dark Mode Toggle (Required in Task 1) -->
+            <div class="dark-mode-toggle ms-lg-3 ms-2">
+                <input type="checkbox" id="toggle-btn" hidden>
+                <label for="toggle-btn" class="icons" style="cursor: pointer; font-size: 1.4rem;">
+                    <i class="fa-solid fa-moon moon-icon"></i>
+                    <i class="fa-solid fa-sun sun-icon text-warning"></i> 
+                </label>
+            </div>
+
+        </div> 
+    </nav>
+    <!-- =========================================== END NAVBAR =========================================== -->
+
+
+    <!-- Main Content Using Semantic Tags -->
+    <main>
+
+        <!-- ========================================== START HERO SECTION (TASK 1) ========================================== -->
+        <header class="header-section d-flex align-items-center justify-content-center text-center" id="home">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-10 text-white">
+                        <div class="header-content">
+                            <h1 class="display-1 fw-bold mb-4">StayEase Hotel</h1>
+                            <p class="lead fs-3 mb-5">Experience the ultimate luxury and comfort</p>
+                            <div class="header-btns">
+                                <a href="#rooms" class="btn-main">Explore Rooms</a>
+                                <a href="#booking" class="btn-outline">Book Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- =========================================== END HERO SECTION =========================================== -->
+
+
+        <!-- ========================================== START ROOMS LISTING PAGE (TASK 2) ========================================== -->
+        <section id="rooms" class="rooms-listing-page py-5 bg-light">
+            <div class="container">
+                
+                <!-- Section Title -->
+                <div class="text-center mb-5">
+                    <h2 class="fw-bold display-5">Rooms Listing</h2>
+                    <div class="m-auto mb-3" style="width: 80px; height: 3px; background-color: var(--color-main);"></div>
+                    <p class="text-muted">Search, Filter by Type, and Set your Price Range</p>
+                </div>
+
+                <!-- START SEARCH / FILTER BAR (As requested in Task 2) -->
+                <div class="row g-3 mb-5 align-items-end shadow-sm p-4 bg-white rounded border">
+                    
+                    <!-- 1. Text input to filter rooms by name (With Datalist) -->
+                    <div class="col-md-6">
+                        <label class="form-label fw-bold small">Search for a room or category:</label>
+                        <input type="text" id="searchInput" list="roomOptions" class="form-control" placeholder="Type room name or type..." autocomplete="off">
+                        <datalist id="roomOptions">
+                            <option value="Single">
+                            <option value="Double">
+                            <option value="Suite">
+                            <option value="Classic Single">
+                            <option value="Deluxe Double">
+                            <option value="Premium Suite">
+                            <option value="Economy Single">
+                            <option value="Family Double">
+                            <option value="Executive Suite">
+                        </datalist>
+                    </div>
+
+                    <!-- 2. Max-price range slider (Required in Task 2) -->
+                    <div class="col-md-6">
+                        <label for="priceRange" class="form-label fw-bold small d-flex justify-content-between">
+                            <span>Max Price:</span>
+                            <span class="text-primary fw-bold"><span id="priceValue">220</span> OMR</span>
+                        </label>
+                        <input type="range" class="form-range" id="priceRange" min="40" max="220" step="10" value="220">
+                    </div>
+
+                </div>
+                <!-- END SEARCH / FILTER BAR -->
+
+                <!-- Container for Dynamic Room Cards (Handled by JS) -->
+                <div id="rooms-container" class="row g-4">
+                    <!-- JS will inject rooms here -->
+                </div>
+
+            </div>
+        </section>
+        <!-- =========================================== END ROOMS LISTING PAGE =========================================== -->
+
+
+        <!-- ========================================== START AMENITIES SECTION (TASK 1) ========================================== -->
+        <section class="amenities-section py-5 bg-white" id="amenities">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <h2 class="fw-bold display-5">Hotel Amenities</h2>
+                    <div class="m-auto mb-3" style="width: 80px; height: 3px; background-color: var(--color-main);"></div>
+                    <p class="text-muted">High-quality services for your comfort</p>
+                </div>
+
+                <div class="row g-4 justify-content-center">
+                    <div class="col-6 col-md-2 text-center">
+                        <div class="amenity-item">
+                            <i class="fas fa-swimming-pool fa-2x mb-3 text-primary"></i>
+                            <h6 class="fw-bold">Pool</h6>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-2 text-center">
+                        <div class="amenity-item">
+                            <i class="fas fa-wifi fa-2x mb-3 text-primary"></i>
+                            <h6 class="fw-bold">Wi-Fi</h6>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-2 text-center">
+                        <div class="amenity-item">
+                            <i class="fas fa-dumbbell fa-2x mb-3 text-primary"></i>
+                            <h6 class="fw-bold">Gym</h6>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-2 text-center">
+                        <div class="amenity-item">
+                            <i class="fas fa-parking fa-2x mb-3 text-primary"></i>
+                            <h6 class="fw-bold">Parking</h6>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-2 text-center">
+                        <div class="amenity-item">
+                            <i class="fas fa-utensils fa-2x mb-3 text-primary"></i>
+                            <h6 class="fw-bold">Restaurant</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- =========================================== END AMENITIES SECTION =========================================== -->
+
+    </main>
+
+
+    <!-- ========================================== START FOOTER (TASK 1) ========================================== -->
+    <footer class="py-5 bg-dark text-white">
+        <div class="container text-center">
+            <div class="row g-4">
+                
+                <!-- Contact Info Section -->
+                <div class="col-md-4">
+                    <h5 class="fw-bold mb-3 text-uppercase">Contact Us</h5>
+                    <p class="small m-0">12 Marina Boulevard, Muscat</p>
+                    <p class="small m-0">info@stayease.com</p>
+                </div>
+
+                <!-- Social Media Links Section -->
+                <div class="col-md-4">
+                    <h5 class="fw-bold mb-3 text-uppercase">Follow Us</h5>
+                    <div class="social-icons">
+                        <a href="#" class="text-white me-3"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-white me-3"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-white"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+
+                <!-- Branding & Copyright Section -->
+                <div class="col-md-4">
+                    <h5 class="fw-bold mb-3 text-uppercase">StayEase</h5>
+                    <p class="small m-0">&copy; 2026 StayEase Hotel. <br> All Rights Reserved</p>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+    <!-- =========================================== END FOOTER =========================================== -->
+
+
+    <!-- Scripts -->
+    <script src="./JS/bootstrap.bundle.min.js"></script>
+    <script src="./JS/all.min.js"></script>
+    <script src="./JS/main.js"></script>
+    
+</body>
+</html>
