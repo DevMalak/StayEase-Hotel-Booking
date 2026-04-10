@@ -1,0 +1,33 @@
+<div class="card h-100 shadow-sm border-0 position-relative">
+  
+
+  <!-- ngIf: Only show this badge if the room is not available -->
+
+  <div *ngIf="!roomData.available" class="position-absolute top-0 end-0 m-2 badge bg-danger shadow">
+    Unavailable
+  </div>
+  <!-- Property Binding -->
+
+  <img [src]="roomData.imageSrc" class="card-img-top" [alt]="roomData.name" style="height: 200px; object-fit: cover;">
+
+  <div class="card-body text-center">
+    <h5 class="fw-bold text-primary">{{ roomData.name }}</h5>
+    <div [ngSwitch]="roomData.type" class="mb-2">
+      <span *ngSwitchCase="'Single'" class="badge bg-info text-dark">Single</span>
+      <span *ngSwitchCase="'Double'" class="badge bg-primary">Double</span>
+      <span *ngSwitchCase="'Suite'" class="badge bg-warning text-dark">Suite</span>
+      <span *ngSwitchDefault class="badge bg-secondary">{{ roomData.type }}</span>
+    </div>
+
+    <p class="text-muted small">Price: <strong>{{ roomData.price }} OMR</strong></p>
+    
+    <hr>
+<!-- [disabled]: Button is locked if the room is not available -->
+  <!-- (click): Calls the booking function when clicked -->
+    <button class="btn btn-dark w-100" 
+            [disabled]="!roomData.available"
+            (click)="onBookNow()">
+      {{ roomData.available ? 'Book Now' : 'Sold Out' }}
+    </button>
+  </div>
+</div>

@@ -1,0 +1,51 @@
+<!-- ========================================== START NAVBAR ========================================== -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top shadow-sm">
+    <div class="container d-flex align-items-center"> 
+        
+      
+      
+        <a class="navbar-brand fw-bold d-flex align-items-center" routerLink="/home" style="cursor: pointer;">
+            <img src="assets/hotel logo.jpg" alt="StayEase Logo" width="45" height="45" class="me-2 logo-img" style="border-radius: 50%;">
+            <span>StayEase</span>
+        </a>
+
+        <!-- Mobile Menu Toggle -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Navigation Links -->
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/home" routerLinkActive="active text-primary">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/rooms" routerLinkActive="active text-primary">Rooms</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/about" routerLinkActive="active text-primary">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/contact" routerLinkActive="active text-primary">Contact</a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Dark Mode Toggle -->
+        <div class="dark-mode-toggle ms-lg-3 ms-2">
+            <input type="checkbox" 
+                   id="toggle-btn" 
+                   hidden 
+                   (change)="toggleDarkMode()" 
+                   [checked]="isDark">
+                   
+            <label for="toggle-btn" class="icons" style="cursor: pointer; font-size: 1.4rem;">
+                <i *ngIf="!isDark" class="fa-solid fa-moon moon-icon"></i>
+                <i *ngIf="isDark" class="fa-solid fa-sun sun-icon text-warning"></i> 
+            </label>
+        </div>
+    </div> 
+</nav>
+<!-- =========================================== END NAVBAR =========================================== -->
