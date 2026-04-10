@@ -3,7 +3,7 @@
 StayEase is a comprehensive hotel booking web application developed as a final project for the Frontend Web Development track. The project is divided into two main parts: a responsive static website and an Angular-based Single Page Application (SPA).
 
 ## 🚀 Live Demo
-[]
+[https://devmalak.github.io/StayEase-Hotel-Booking/]
 
 ---
 
