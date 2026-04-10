@@ -1,0 +1,149 @@
+/* ============================================================
+    1. Global Background and Text (Body)
+    ============================================================ */
+body.dark-mode {
+    background-color: black !important;
+    color: white !important;
+}
+
+/* ============================================================
+    2. Sections and Cards (Navbar, Amenities, Cards)
+    ============================================================ */
+/* Make navbar and sections completely black in dark mode */
+.dark-mode .navbar, 
+.dark-mode .amenities-section,
+.dark-mode .bg-light,
+.dark-mode .bg-white, /* This fixes the white box in your image */
+.dark-mode .shadow-sm {
+    background-color: black !important;
+    border-bottom: 1px solid #333 !important;
+    border: 1px solid #333 !important;
+}
+
+/* Cards (Inside Amenities or Rooms) */
+.dark-mode .amenity-item, 
+.dark-mode .card {
+    background-color: #1a1a1a !important; /* Dark gray to distinguish card from background */
+    border: 1px solid #333 !important;
+    color: white !important;
+}
+
+/* ============================================================
+    3. Text and Icons (Ensure White and Gold)
+    ============================================================ */
+/* Ensure all headings, labels, and spans are white */
+.dark-mode h1, .dark-mode h2, .dark-mode h3, 
+.dark-mode h4, .dark-mode h5, .dark-mode h6, 
+.dark-mode p, .dark-mode span, .dark-mode label, 
+.dark-mode .nav-link, .dark-mode .navbar-brand,
+.dark-mode .form-label, .dark-mode #priceValue {
+    color: white !important;
+}
+
+/* Amenities and Restaurant icons (Turn to Gold/Orange) */
+/* Added .text-primary to force blue icons to turn gold */
+.dark-mode .amenity-item , 
+.dark-mode .fas, 
+.dark-mode .text-primary,
+.dark-mode .fa-utensils, 
+.dark-mode .fa-wifi,
+.dark-mode .fa-swimming-pool {
+    color: #c17e1f !important;
+}
+
+/* Small line under titles (Turn to Gold) */
+.dark-mode .m-auto {
+    background-color: #c17e1f !important;
+}
+
+/* ============================================================
+    4. Buttons and Inputs in Dark Mode
+    ============================================================ */
+.dark-mode .btn-main {
+    background-color: #c17e1f !important; /* Gold color */
+    border-color: #c17e1f !important;
+    color: white !important;
+}
+
+.dark-mode .btn-main:hover {
+    background-color: #b06a1b !important; /* Darker gold on hover */
+}
+
+/* Fix input boxes (Search field) to be dark */
+.dark-mode .form-control {
+    background-color: #1a1a1a !important;
+    color: white !important;
+    border: 1px solid #444 !important;
+}
+
+/* ============================================================
+    5. Footer
+    ============================================================ */
+.dark-mode footer {
+    background-color: black !important;
+    border-top: 1px solid #333 !important;
+}
+
+.dark-mode footer h5 {
+    color: #c17e1f !important; /* Footer titles in Gold */
+}
+
+.dark-mode footer .social-icons a:hover  {
+    color: #c17e1f !important;
+    transform: scale(1.2);
+    transition: 0.3s ease;
+}
+
+/* ============================================================
+    6. Icon Logic (Sun & Moon)
+    ============================================================ */
+.sun-icon {
+    display: none;
+}
+
+body.dark-mode .moon-icon {
+    display: none !important;
+}
+
+body.dark-mode .sun-icon {
+    display: inline-block !important;
+    color: #ffca28 !important; /* Sun icon yellow color */
+}
+
+
+
+body.dark-mode label, 
+body.dark-mode h2, 
+body.dark-mode h4 {
+    color: #ffffff !important;
+}
+
+
+body.dark-mode .room-box, 
+body.dark-mode .form-box {
+    background-color: #1a1a1a !important; 
+    border: 1px solid #333 !important;
+    color: #ffffff !important;
+}
+
+body.dark-mode .form-control, 
+body.dark-mode .form-select, 
+body.dark-mode textarea {
+    background-color: #2b2b2b !important; 
+    color: #ffffff !important;
+    border: 1px solid #444 !important;
+}
+
+body.dark-mode .form-control::placeholder {
+    color: #aaa !important;
+}
+
+body.dark-mode #resetBtn {
+    color: #ffffff !important;
+    border-color: #ffffff !important;
+}
+
+body.dark-mode .room-box h5,
+body.dark-mode .room-box p {
+    color: #ffffff !important;
+}
